@@ -47,9 +47,9 @@ public class SimonSays extends KeyAdapter {
 
 	public void keyPressed(KeyEvent e) {
 		// 15. Make a points variable to track the score.
-
+		int score = 0;
 		// 16. If the keyCode matches the imageIndex and "Simon says"
-		
+
 			// 17. Increase the value of score
 		
 			// 18. Use the speak method to tell the user they were correct
@@ -75,25 +75,40 @@ public class SimonSays extends KeyAdapter {
 
 	private void showImage() {
 		// 5. Initialize your frame to a new JFrame()
+		JFrame frame = new JFrame();
 		
 		// 6. Set the frame to visible
+		frame.setVisible(true);
 
 		// 7. Uncomment the following line to add a random image to your frame
-		//frame.add(getNextRandomImage());
+		frame.add(getNextRandomImage());
 
 		// 8. Set the name of your frame
-
+		frame.setName("Show Image");
 		// 9. Pack the frame
-		
+		frame.pack();
 		// 10. Set the defaultCloseOperation of your from to JFrame.EXIT_ON_CLOSE
-		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// 11. Add a key listener to the frame
-
+		frame.addKeyListener(this);
 		// 12. Create a new instance of Random
-
+		Random rand = new Random();
+		int r = rand.nextInt(5) + 1;
 		// 13. Use the Random and the speak method to either say 
 		// "Simon says press this key" or "Press this key"
-
+		if (r == 1) {
+			speak("Simon says press the left key");
+			
+		}
+		else if (r == 2) {
+			speak("Simon says press the right key");
+		}
+		else if (r == 3) {
+			speak("Simon says press the up key");
+		}
+		else if (r == 4) {
+			speak("Simon says press the right key");
+		}
 		// 14. Above, set the value of simonSays to true/false appropriately
 
 		

@@ -1,4 +1,3 @@
-package extra;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +9,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class NastySurprise implements ActionListener {
@@ -41,17 +39,6 @@ public class NastySurprise implements ActionListener {
 		
 	}
 	
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		if (e.getActionCommand().equals("Trick")) {
-			showPictureFromTheInternet("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwid8fyX-p3dAhWaCTQIHaCTDnUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.twitch.tv%2Fhsdogdog&psig=AOvVaw15Rxsr3Uck3VCursindEXB&ust=1536033860545615");
-		}
-		if (e.getActionCommand().equals("Treat")) {
-			showPictureFromTheInternet("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwi3zvmj-p3dAhUZGjQIHdTZAOsQjRx6BAgBEAU&url=https%3A%2F%2Fwww.amazon.com%2FNicolas-Cage-Celebrity-Fancy-Dress%2Fdp%2FB00W5IY1BO&psig=AOvVaw0_5kwSK2r1BV8b4Hsia9XN&ust=1536033886040027");
-		}
-	}
 	
 	private void showPictureFromTheInternet(String imageUrl) {
 	     try {
@@ -65,6 +52,18 @@ public class NastySurprise implements ActionListener {
 	     } catch (MalformedURLException e) {
 	          e.printStackTrace();
 	     }
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getActionCommand().equals("Trick")) {
+			showPictureFromTheInternet("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdAOOAmsN7O1T5So0hPiyF81iBO3daVU4WHPCr6fv2YrNJx4PxOQ");
+		}
+		if (e.getActionCommand().equals("Treat")) {
+			showPictureFromTheInternet("https://images-na.ssl-images-amazon.com/images/I/61Wo915nuTL._SX425_.jpg");
+		}
+
 	}
 
 }

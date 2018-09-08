@@ -49,28 +49,37 @@ public class SimonSays extends KeyAdapter {
 		// 15. Make a points variable to track the score.
 		int score = 0;
 		// 16. If the keyCode matches the imageIndex and "Simon says"
-
+		
+		if (imageIndex == e.getKeyCode() && simonSays) {
+			score++;
+			speak("Correct");
+		}
 			// 17. Increase the value of score
 		
 			// 18. Use the speak method to tell the user they were correct
 		
 		// 19. If the keyCode doesn't match the imageIndex and "Simon didn't say..."
-		
+		else if (imageIndex != e.getKeyCode() && !simonSays) {
+			score++;
+			speak("Correct");
+		}
 			// 20.  Increase the value of score
 		
 			// 21. Use the speak method to tell the user they were correct
 		
 		// 22. Increment tries by 1
-		
+		tries++;
 		// 25. If tries is greater than 9 (or however many you want)...
-		
+		if (tries > 5) {
 			// 26. Tell the user their score
-		
+			System.out.println(score);
 			// 27. Exit the program
-
+			System.exit(0);
+		}
 		// 23. Dispose of the frame
-
+			frame.dispose();
 		// 24. Call the showImage method to show a new image
+			showImage();
 	}
 
 	private void showImage() {
@@ -93,24 +102,18 @@ public class SimonSays extends KeyAdapter {
 		frame.addKeyListener(this);
 		// 12. Create a new instance of Random
 		Random rand = new Random();
-		int r = rand.nextInt(5) + 1;
+		int r = rand.nextInt(2);
 		// 13. Use the Random and the speak method to either say 
 		// "Simon says press this key" or "Press this key"
-		if (r == 1) {
-			speak("Simon says press the left key");
-			
+		if (r == 0) {
+			speak("Simon says press this key");
+			simonSays = true;
 		}
-		else if (r == 2) {
-			speak("Simon says press the right key");
-		}
-		else if (r == 3) {
-			speak("Simon says press the up key");
-		}
-		else if (r == 4) {
-			speak("Simon says press the right key");
+		else if (r==1) {
+			speak("Press this key");
+			simonSays = false;
 		}
 		// 14. Above, set the value of simonSays to true/false appropriately
-
 		
 	}
 

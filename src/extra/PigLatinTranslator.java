@@ -40,6 +40,6 @@ public class PigLatinTranslator implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		t.translate(tf1.getText());
+
 	}
 }

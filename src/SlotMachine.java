@@ -21,5 +21,6 @@ public class SlotMachine {
 		panel.add(button);
 		frame.add(panel);
 		frame.pack();
+		
 	}
 }

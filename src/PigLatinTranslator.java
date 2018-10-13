@@ -1,4 +1,4 @@
-package extra;
+
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,12 +15,12 @@ public class PigLatinTranslator implements ActionListener {
 	JTextField tf1 = new JTextField(20);
 	JTextField tf2 = new JTextField(20);
 
-	Translator t = new Translator();
+	Translator translator = new Translator();
 
 	public static void main(String[] args) {
 		PigLatinTranslator pl = new PigLatinTranslator();
 		pl.gui();
-
+		
 	}
 
 	public void gui() {
@@ -40,6 +40,8 @@ public class PigLatinTranslator implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-
+		
+		System.out.println(translator.translate(tf1.getText()));
+		tf2.setText(translator.translate(tf1.getText()));
 	}
 }

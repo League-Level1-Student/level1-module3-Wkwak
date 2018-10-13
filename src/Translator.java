@@ -1,4 +1,4 @@
-package extra;
+
 
 public class Translator {
 	/**
